@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SolidSlate.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,16 @@ namespace SolidSlate.Controllers
     {
         public ActionResult Detail()
         {
-            return View();
+
+            var customer = new Customer()
+            {
+                Id = 1,
+                Name = "Jesús Gómez",
+                Alias = "Chucho",
+                IsCompany = false
+            };
+
+            return View(customer);
         }
     }
 }
