@@ -1,7 +1,7 @@
 ﻿@model SolidSlate.Models.Customer
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Detalle de cliente";
+    ViewBag.ShowBackBar = true;
 }
 
 <div>
@@ -9,4 +9,5 @@
     <h3>Alias: @Model.Alias</h3>
     <h3>Es una empresa: @(Model.IsCompany ? "Si" : "No")</h3>
 </div>
+
 

@@ -1,4 +1,5 @@
-﻿using SolidSlate.Models;
+﻿using SolidSlate.Data;
+using SolidSlate.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,16 +10,34 @@ namespace SolidSlate.Controllers
 {
     public class CustomersController : Controller
     {
-        public ActionResult Detail()
+        private CustomerRepository _customerRepository = null;
+
+        public CustomersController()
+        {
+            _customerRepository = new CustomerRepository();
+        }
+
+        public ActionResult Index()
+        {
+            var customers = _customerRepository.getCustomers();
+
+            return View(customers);
+        }
+
+        public ActionResult Detail(int? id)
         {
 
-            var customer = new Customer()
+            if (id == null)
             {
-                Id = 1,
-                Name = "Jesús Gómez",
-                Alias = "Chucho",
-                IsCompany = false
-            };
+                return HttpNotFound();
+            }
+
+            var customer = _customerRepository.GetCustomer((int)id);
+
+            if (customer == null)
+            {
+                return HttpNotFound();
+            }
 
             return View(customer);
         }
