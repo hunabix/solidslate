@@ -1,0 +1,53 @@
+﻿@model SolidSlate.Models.Customer[]
+@{
+    ViewBag.Title = "Nuevo cliente";
+}
+
+<h1>@ViewBag.Title</h1>
+
+<form method="post">
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <div class="form-group">
+                <label for="CreationDate" class="control-label">Fecha</label>
+                <input type="text" id="CreationDate" name="CreationDate" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="Name" class="control-label">Nombre</label>
+                <input type="text" id="Name" name="Name" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="Alias" class="control-label">Alias</label>
+                <input type="text" id="Alias" name="Alias" class="form-control">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="form-group">
+                <label for="IsCompany" class="control-label">¿Es empresa?</label>
+                <input type="text" id="IsCompany" name="IsCompany" class="form-control">
+            </div>
+
+        </div>
+
+        <div class="col-md-12">
+            <div class="pad-top">
+
+                <button type="submit" class="btn btn-success btn-lg margin-right">
+                    <span class="glyphicon glyphicon-save"></span> Save
+                </button>
+                <a href="@Url.Action("Index")" class="btn btn-warning btn-lg">
+                    <span class="glyphicon glyphicon-remove"></span> Cancel
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</form>

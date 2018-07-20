@@ -9,6 +9,7 @@ namespace SolidSlate.Models
     public class Customer
     {
         public int Id { get; set; }
+        public DateTime CreationDate { get; set; }
         public string Name { get; set; }
         public string Alias { get; set; }
         public bool IsCompany { get; set; }
